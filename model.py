@@ -253,7 +253,8 @@ class WeightsSaver(keras.callbacks.Callback):
 
 def get_train_val_gen(args, dataset_dir):
   unpack_dataset(dataset_dir, args["img_dir"])
-  img_paths = [os.path.join(args["img_dir"], fn) for fn in os.listdir(args["img_dir"])]
+  img_dir = os.path.join(dataset_dir, (args["img_dir"]))
+  img_paths = [os.path.join(img_dir, fn) for fn in os.listdir(img_dir)]
   aug = get_augmentation(args)
   nn_train_gen = get_nn_data_gen(img_paths[:-int(len(img_paths)/10)], args["batch_size"], aug)
   nn_val_gen = get_nn_data_gen(img_paths[-int(len(img_paths)/10):], args["batch_size"], aug)
@@ -326,7 +327,9 @@ def save_video(exp_dir, dataset_dir, run_id, embedding_transformations, video_na
   
   augmentation = get_augmentation(args)
   
-  img_paths = np.array([os.path.join(args["img_dir"], fn) for fn in os.listdir(args["img_dir"])])
+  img_dir = os.path.join(dataset_dir, (args["img_dir"]))
+  img_paths = [os.path.join(img_dir, fn) for fn in os.listdir(img_dir)]
+  
   inital_embedding_size = embedding_transformations[0]
   img_paths = np.random.choice(img_paths, size=inital_embedding_size)  
   embeddings = use_encoder(model, img_paths, args["batch_size"], augmentation)
