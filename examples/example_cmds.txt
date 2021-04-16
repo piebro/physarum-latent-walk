@@ -1,0 +1,10 @@
+mkdir gif_350
+for f in *.mp4; do
+    ffmpeg -i $f -vf "scale=350:-1,palettegen" -y /tmp/palette.png
+    ffmpeg -i $f -i /tmp/palette.png -lavfi "scale=350:-1 [x]; [x][1:v] paletteuse" gif_350/${f%.*}.gif
+done
+
+mkdir 512
+for f in *.mp4; do
+    ffmpeg -i $f -vf scale=512:-1 512/${f%.*}.mp4;
+done
