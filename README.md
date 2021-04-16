@@ -11,4 +11,4 @@ More Examples in higher quality can be found here: https://piebro.github.io/phys
 
 ## Usage
 
-How to use the functions can be found in the example notebook.
+An example of how to use the the dataset and generate a latent walk with the model can be found in example.ipynb. To open the notebook in google colab click [here](https://colab.research.google.com/github/piebro/physarum-latent-walk/blob/master/example.ipynb)
