@@ -7,7 +7,7 @@ Usage of the [Physarum Latent Walk Dataset](https://www.kaggle.com/) to generate
 ![labyrinth gif](examples/video_labyrinth_5_et_noise_seed952352_epoch015_e6addb14d0e40ff485fdab276d6682af.gif)
 ![runes gif](examples/video_runes_6_et_noise_seed312575_epoch035_b3e25ec407470890e425d97dd5923042.gif)
 
-More Examples in better quality can be found here: https://piebro.github.io/physarum-latent-walk/
+More Examples in better quality can be found here: https://piebro.github.io/physarum-latent-walk/index.html
 
 ## Usage
 
